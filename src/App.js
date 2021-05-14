@@ -1,12 +1,12 @@
 import React, { Component } from "react";
-import logo from './logo.svg';
+import Game from "./Game";
 import './App.css';
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
-      page: "endgame",
+      page: "game",
       humanPlayerID: "X",
       playerGames: 0,
       playerWins: 0
@@ -49,22 +49,7 @@ class App extends Component {
         </section>
       )}
       {this.state.page === "game" && (
-        <div>
-          <h2 className="turn-display">
-            X'S TURN!
-          </h2>
-          <section class="game-grid">
-            <button className="space1"></button>
-            <button className="space2"></button>
-            <button className="space3"></button>
-            <button className="space4"></button>
-            <button className="space5"></button>
-            <button className="space6"></button>
-            <button className="space7"></button>
-            <button className="space8"></button>
-            <button className="space9"></button>
-          </section>
-        </div>
+          <Game playerIcon={this.humanPlayerID}/>
       )}
       {this.state.page === "endgame" && (
         <section class="win-stats">

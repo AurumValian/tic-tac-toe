@@ -14,14 +14,25 @@ class App extends Component {
 
     this.selectPlayerOne = this.selectPlayerOne.bind(this);
     this.selectPlayerTwo = this.selectPlayerTwo.bind(this);
+    this.win = this.win.bind(this);
   }
 
   selectPlayerOne() {
-    this.state.humanPlayerID = "X"
+    this.setState({humanPlayerID: "X"})
   }
 
   selectPlayerTwo() {
-    this.state.humanPlayerID = "O"
+    this.setState({humanPlayerID: "O"})
+  }
+
+  win(icon) {
+    icon === this.state.humanPlayerID ?
+      this.setState({page: "endgame", playerGames: this.state.playerGames + 1, playerWins: this.state.playerWins + 1}) :
+      this.setState({page: "endgame", playerGames: this.state.playerGames + 1})
+  }
+
+  tie() {
+
   }
 
   render() {
@@ -49,8 +60,9 @@ class App extends Component {
         </section>
       )}
       {this.state.page === "game" && (
-          <Game playerIcon={this.humanPlayerID}/>
+          <Game playerIcon={this.humanPlayerID} win={this.win} tie={this.tie}/>
       )}
+
       {this.state.page === "endgame" && (
         <section class="win-stats">
           You have won {this.state.playerWins} times and lost {this.state.playerGames - this.state.playerWins} times.

@@ -1,0 +1,21 @@
+.game-grid {
+  padding-left: 10%;
+  padding-right: 10%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-gap: 5em;
+}
+
+.space1,
+.space2,
+.space3,
+.space4,
+.space5,
+.space6,
+.space7,
+.space8,
+.space9 {
+  
+  height: 10vh;
+}

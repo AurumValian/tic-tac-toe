@@ -5,7 +5,7 @@ class Game extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      playerIcon: "X",
+      playerIcon: this.props.playerIcon,
       turn: "X",
       board: [" ", " ", " ", " ", " ", " ", " ", " ", " "]
     }
@@ -14,6 +14,12 @@ class Game extends Component {
     this.checkGameOver = this.checkGameOver.bind(this);
     this.computerTurn = this.computerTurn.bind(this);
     this.cycleTurns = this.cycleTurns.bind(this);
+  }
+
+  componentDidMount() {
+    if (this.state.playerIcon === "O") {
+      this.computerTurn()
+    }
   }
 
   computerTurn() {

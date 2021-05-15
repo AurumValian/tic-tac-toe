@@ -1,10 +1,10 @@
 .game-grid {
-  padding-left: 10%;
-  padding-right: 10%;
+  padding-left: 20%;
+  padding-right: 20%;
   display: grid;
+  grid-row: 3;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
-  grid-gap: 5em;
 }
 
 .space1,
@@ -16,6 +16,17 @@
 .space7,
 .space8,
 .space9 {
-  
   height: 10vh;
+  background: rgba(134,52,52,0);
+  font-size: 2vw;
+  font-family: serif;
+  border: none;
+}
+
+.space1, .space2, .space3, .space4, .space5, .space6 {
+  border-bottom: 2vw solid #322c96;
+}
+
+.space1, .space2, .space4, .space5, .space7, .space8 {
+  border-right: 2vw solid #322c96;
 }

@@ -1,38 +1,74 @@
+html {
+  height: 100%;
+  background: linear-gradient(180deg, rgba(52,87,134,1) 0%, rgba(54,209,236,1) 33%);
+  color: #020b4a;
+}
+
 .App {
   text-align: center;
+  display: grid;
+  grid-template-rows: 10% 30% 50% 10%;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.player-select {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-row: 3;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-content: center;
+  align-items: center;
+  justify-items: center;
+  font-size: 3vw;
+}
+
+.player-select-text {
+  grid-column: 1 / 3;
+}
+
+.player-one-select {
+  font-family: serif;
+  grid-column: 1;
+  font-size: 6vw;
+  background: rgba(134,52,52,0);
+  color: #020b4a;
+  border: none;
+  border-bottom: 1vh solid white;
+}
+
+.player-two-select {
+  font-family: serif;
+  grid-column: 2;
+  font-size: 6vw;
+  background: rgba(134,52,52,0);
+  color: #020b4a;
+  border: none;
+  border-bottom: 1vh solid white;
+}
+
+.active-button {
+  border-bottom: 1vh solid green;
+}
+
+.start-match {
+  margin-top: 20vh;
+  width: 90%;
+  grid-row: 4;
+  grid-column: 1 / 3;
+  background: #020b4a;
   color: white;
+  font-size: 2vw;
 }
 
-.App-link {
-  color: #61dafb;
+.play-again {
+  margin-top: 20vh;
+  width: 90%;
+  grid-row: 4;
+  background: #020b4a;
+  color: white;
+  font-size: 2vw;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.start-match:hover,
+.play-again:hover {
+  filter: brightness(180%);
 }

@@ -15,18 +15,33 @@ class App extends Component {
 
     this.selectPlayerOne = this.selectPlayerOne.bind(this);
     this.selectPlayerTwo = this.selectPlayerTwo.bind(this);
+    this.unselectPlayers = this.unselectPlayers.bind(this);
     this.startGame = this.startGame.bind(this);
     this.win = this.win.bind(this);
     this.tie = this.tie.bind(this);
     this.reset = this.reset.bind(this);
   }
 
-  selectPlayerOne() {
+  selectPlayerOne(event) {
+    this.unselectPlayers()
+    event.target.classList.add("active-button")
     this.setState({humanPlayerID: "X"})
   }
 
-  selectPlayerTwo() {
+  selectPlayerTwo(event) {
+    this.unselectPlayers()
+    event.target.classList.add("active-button")
     this.setState({humanPlayerID: "O"})
+  }
+
+  unselectPlayers() {
+    const playerOneButton = document.querySelector(".player-one-select")
+    const playerTwoButton = document.querySelector(".player-two-select")
+
+    playerOneButton.classList.remove("active-button")
+    playerTwoButton.classList.remove("active-button")
+    console.log(playerOneButton)
+    console.log(playerTwoButton)
   }
 
   startGame() {
@@ -57,7 +72,7 @@ class App extends Component {
             WELCOME
           </h1>
           <section class="player-select">
-            PICK YOUR PLAYER
+            <p className="player-select-text">PICK YOUR PLAYER</p>
             <button class="player-one-select" onClick={this.selectPlayerOne}>X</button>
             <button class="player-two-select" onClick={this.selectPlayerTwo}>O</button>
             <button class="start-match" onClick={this.startGame}>MATCH ME WITH MY OPPONENT</button>
